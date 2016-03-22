@@ -1,0 +1,82 @@
+<?php 
+	session_start();
+	ob_start();
+	error_reporting(0);
+	include 'conecta.php'; 
+	//Conecta no banco do sistema 
+?> 
+
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+
+		<!-- Bootstrap - Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Bitter:400,700|Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+		<!-- Custom styles -->
+		<link  rel="stylesheet" href="<?php echo $path;?>/lib/css/styles.css">
+	</head>
+
+	<body>
+		<?php 
+
+			if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['matricula']) && !empty($_POST['senha'])) {
+				
+				$senha = stripslashes($_POST['senha']);
+				$senha = mysql_real_escape_string($_POST['senha']);
+				$matricula = stripslashes($_POST['matricula']);
+				$matricula = mysql_real_escape_string($_POST['matricula']);
+
+				$sql = "SELECT * FROM alunos WHERE matricula = '".$matricula."' AND senha = '".$senha."' ";
+				$sql = mysql_query($sql) or die(mysql_error());
+
+				$count_sql = mysql_num_rows($sql); //conta a quantidade de linhas do resultado da consulta
+
+				$aluno = array();
+				while($linha = mysql_fetch_assoc($sql)){
+
+					// $aluno[] = $linha;
+
+					//Login Correto
+					if ($count_sql == 1) {
+						// print_r($aluno);
+						// echo $linha['id_aluno']."zz";
+						$_SESSION['aluno'] = $linha['id_aluno'];
+						include 'main.php';
+					}
+
+					//Login Incorreto
+					else{
+						$msg = 'Matricula ou senha incorretos';
+						include 'login.php';
+					}
+				}
+			}
+			else{
+				if (empty($_SESSION['aluno'])) {
+					include 'login.php';
+				}
+				else{
+					include 'main.php';
+				}
+			}
+		?>
+		
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+		<!-- Custom JS -->
+		<link  rel="stylesheet" href="<?php echo $path;?>/lib/js/utils.css">
+
+	</body>
+</html>
