@@ -1,0 +1,192 @@
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+
+   	/* Styles > Responsive font-size
+	————————————————————————————————————————————————————————————————————————— */
+	@media (max-width: 767px) {
+		html {
+			font-size: 8px;
+		}
+	}
+
+	@media (min-width: 768px) and (max-width: 991px) {
+		html {
+			font-size: 8.5px;
+		}
+	}
+
+	@media (min-width: 992px) and (max-width: 1199px) {
+		html {
+			font-size: 9.5px;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		html {
+			font-size: 10px;
+		}
+	}
+
+
+	/* Styles > Main elements
+	————————————————————————————————————————————————————————————————————————— */
+	a,
+	a:hover,
+	a:focus,
+	a:active {
+		text-decoration:none;
+	}
+
+	button{
+		border:0;
+	}
+
+	ul li {
+		list-style: none;
+	}
+
+
+
+
+/* ==========================================================================
+   Blocks
+   ========================================================================== */
+
+
+
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+	body{
+		font-family: "Open Sans", Helvetica;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4, 
+	h5, 
+	h6{
+		font-family: "Bitter", Helvetica;
+	}
+
+
+
+
+/* ==========================================================================
+   Colors
+   ========================================================================== */
+/* 	
+	#FFF		- white
+	#f2f2f2	 	- white-smoke-1
+	#ddd	 	- white-smoke-2
+	#eee	 	- white-smoke-3
+
+	#333		- dark-grey-1
+	#34383b		- dark-grey-2
+	#3e4147		- medium-gray-1
+	#4a4c50		- medium-gray-2
+
+	#2c2763	 	- dark-blue
+	#656ceb	 	- medium-blue	
+	#20cbe4		- light-turquoise
+	#1fc1d8		- dark-turquoise
+
+	#ffd953		- light-mustard 
+	#F7CB4E		- medium-mustard
+	#f5b604		- dark-mustard
+
+	#a2dd9a	 	- light-green
+	#97cd8f		- medium-green
+	#92c78b		- dark-green
+	
+	#ed7163	 	- light-salmon
+	#ed7163		- dark-salmon
+
+*/
+	body 								{	color: #333; 	}
+
+	.bg-flat-color-white-smoke-2		{ 	background-color: #ddd;	}
+
+
+
+/* ==========================================================================
+   Stuffs
+   ========================================================================== */
+
+
+
+
+/* ==========================================================================
+   Navbar
+   ========================================================================== */
+
+
+
+
+/* ==========================================================================
+   Login
+   ========================================================================== */
+	.wrapper-login{
+		background: url('../img/bg-login.png') no-repeat center center / cover;
+		padding: 100px 0;
+		height: 100%;
+		width: 100%;
+		position: fixed;
+	}
+
+	.login{
+		width: 500px;
+	    height: 370px;
+	    padding: 40px;
+	    background-color: #FFF;
+	    border: 1px solid #F5F5F5;
+	    border-radius: 3px;
+	    top: 50%;
+	    left: 50%;
+	    position: absolute;
+	    margin-left: -250px;
+    	margin-top: -185px;
+	}
+	
+	.login .logo{
+		background-image: url('../img/logo-hermes-light-bg.png');
+		background-size: cover;
+		height: 75px;
+		width: 115px;
+		margin-bottom:20px;
+	}
+
+	.login form{
+		max-width: 260px;
+	}
+
+	.login input.btn{
+		background-color: #ffd953;
+	    border: none;
+	    border-bottom: 1.2px solid #f5b604;
+	    transition: none !important;
+		-webkit-transition: none !important;
+	}
+
+	.login input.btn:hover{
+		background-color: #f5b604;
+		border-bottom: 2.2px solid #f5b604;
+	} 
+
+	.login input.btn:hover,
+	.login input.btn:focus{
+		border: none !important;
+		box-shadow: none !important;
+		-webkit-box-shadow: none !important;
+		outline:none !important;
+	}
+
+	.form-control:focus{
+		border-color: #eee;
+		-webkit-box-shadow:inset 0 1px 1px rgba(255, 255, 255, 0.075),0 0 8px rgba(36, 37, 37, 0.6);
+		box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.075),0 0 8px rgba(36, 37, 37, 0.6);
+	}
