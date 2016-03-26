@@ -3,7 +3,7 @@
 		<div class="login center-block">
 			<div class="row">
 				<div class="text-center">
-					<img class="logo" src="lib/img/logo-hermes-light-bg.png" alt="Logo">
+					<img class="logo" src="lib/img/logo-hermes-yellow.png" alt="Logo">
 				</div>
 				<form class="center-block" name="form-login" action="index.php" method="post">
 					<div class="input-group">
