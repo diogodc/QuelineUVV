@@ -87,8 +87,8 @@
 
 	#333		- dark-grey-1
 	#34383b		- dark-grey-2
-	#3e4147		- medium-gray-1
-	#4a4c50		- medium-gray-2
+	#4a4c50		- medium-gray
+	#5d5d5d		- light-gray
 
 	#2c2763	 	- dark-blue
 	#656ceb	 	- medium-blue	
@@ -108,11 +108,18 @@
 
 */
 	body 								{	color: #333; 	}
-
-	.bg-flat-color-white-smoke-2		{ 	background-color: #ddd;	}
-
+	.dark-container						{	color: #ddd;	}
 
 
+	.bg-flat-color-white-smoke-2		{ 	background-color: #dddddd;	}
+	.bg-flat-color-medium-gray			{	background-color: #4a4c50;}
+	.bg-flat-color-light-gray			{	background-color: #5d5d5d;	}
+
+	
+	.wrapper-content{
+		background-color:#ddd;
+	}
+	
 /* ==========================================================================
    Stuffs
    ========================================================================== */
@@ -123,9 +130,56 @@
 /* ==========================================================================
    Navbar
    ========================================================================== */
+	.navbar-brand img{
+		height: 30px;
+	}
+	
+	nav.navbar{
+		margin-bottom: 0;
+	}
 
 
 
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+	.navigation .info-profile{
+		padding: 30px 15px;
+	}
+	
+	.info-profile img{
+	    border-radius: 50%;
+	    width: 100px;
+	    background-color: #FFF;
+	    padding: 10px;
+	    margin: 0 auto;
+	    display: block;
+	}
+	
+	.info-profile .name{
+		font-size: 20px;
+		margin-top: 15px;
+	}
+	
+	.navigation ul.nav li a,
+	.logout a{
+		color: #ddd;
+	}
+	
+	.navigation ul.nav>li>a:hover{
+		background-color: #34383b;
+		border-radius: 0;
+		border-left: 4px solid #f5b604;
+		padding-left: 11px;
+	}
+	
+	.navigation .logout{
+		margin: 25px 0;
+	}
+
+	.navigation .logout a:hover{
+		color:#FFF;
+	}
 
 /* ==========================================================================
    Login
@@ -137,9 +191,8 @@
 		width: 100%;
 		position: fixed;
 	}
-		
+
 	.login img.logo{
-		background-size: cover;
 		width: 265px;
 		margin-bottom:20px;
 	}
@@ -174,6 +227,7 @@
 	
 	input.form-control{
 		color:#222;
+		height: 32px;
 	}
 	
 	/* changing placeholder color*/
