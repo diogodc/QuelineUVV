@@ -22,6 +22,10 @@
 
 		<!-- Custom styles -->
 		<link  rel="stylesheet" href="<?php echo $path;?>/lib/css/styles.css">
+
+		<!-- Sweet Alert -->
+		<link rel="stylesheet" type="text/css" href="<?php echo $path;?>/lib/plugins/sweetalert-master/dist/sweetalert.css">
+		<script src="<?php echo $path;?>/lib/plugins/sweetalert-master/dist/sweetalert.min.js"></script>
 	</head>
 
 	<body>
@@ -40,23 +44,20 @@
 				$count_sql = mysql_num_rows($sql); //conta a quantidade de linhas do resultado da consulta
 
 				$aluno = array();
-				while($linha = mysql_fetch_assoc($sql)){
 
-					// $aluno[] = $linha;
+				//Login Correto
+				if ($count_sql == 1) {
 
-					//Login Correto
-					if ($count_sql == 1) {
-						// print_r($aluno);
-						// echo $linha['id_aluno']."zz";
-						$_SESSION['aluno'] = $linha['id_aluno'];
-						include 'main.php';
-					}
+					$aluno = mysql_fetch_assoc($sql);
+					$_SESSION['aluno'] = $aluno['id_aluno'];
+					$_SESSION['nome_aluno'] = $aluno['nome'];
+					include 'main.php';
+				}
 
-					//Login Incorreto
-					else{
-						$msg = 'Matricula ou senha incorretos';
-						include 'login.php';
-					}
+				//Login Incorreto
+				else{
+					$msg = "<script>swal('Erro!','Matricula ou senha incorretos','error')</script>";
+					include 'login.php';
 				}
 			}
 			else{
@@ -76,7 +77,7 @@
 
 
 		<!-- Custom JS -->
-		<link  rel="stylesheet" href="<?php echo $path;?>/lib/js/utils.css">
+		<link  rel="stylesheet" href="<?php echo $path;?>/lib/js/utils.js">
 
 	</body>
 </html>
