@@ -1,7 +1,15 @@
 /* ==========================================================================
    Styles
    ========================================================================== */
-
+	html, body{
+		height: 100%;
+		width:100%;
+	}
+	
+	body{
+		padding-top: 70px;
+	}
+   	
    	/* Styles > Responsive font-size
 	————————————————————————————————————————————————————————————————————————— */
 	@media (max-width: 767px) {
@@ -72,7 +80,9 @@
 	h6{
 		font-family: "Bitter", Helvetica;
 	}
+	
 
+	h2 { font-size: 20px; }
 
 
 
@@ -103,46 +113,240 @@
 	#97cd8f		- medium-green
 	#92c78b		- dark-green
 	
-	#ed7163	 	- light-salmon
+	#48968A		- acqua
+
+	#ff7e6e	 	- light-salmon
 	#ed7163		- dark-salmon
 
 */
-	body 								{	color: #333; 	}
-	.dark-container						{	color: #ddd;	}
+	body 								{	color: #f5f5f5; 	}
+	.dark-container						{	color: #ddd;		}
+	.light-container					{	color: #333;		}
 
 
 	.bg-flat-color-white-smoke-2		{ 	background-color: #dddddd;	}
-	.bg-flat-color-medium-gray			{	background-color: #4a4c50;}
+	.bg-flat-color-medium-gray			{	background-color: #4a4c50;	}
 	.bg-flat-color-light-gray			{	background-color: #5d5d5d;	}
+	
+
+	/* Colors used in boxes 
+	------------------------------*/
+	.bg-flat-color-dark-turquoise		{	background-color: #1fc1d8;	}
+	.bg-flat-color-dark-blue			{	background-color: #2c2763;	}
+	
+	.bg-flat-color-light-salmon			{	background-color: #ff7e6e;	}
+	.bg-flat-color-dark-salmon			{	background-color: #ed7163;	}
+	
+	.bg-flat-color-medium-mustard 		{	background-color: #F7CB4E;	}
+	.bg-flat-color-dark-green 			{	background-color: #92c78b;	}
+	.bg-flat-color-acqua 				{	background-color: #48968A;	}
+	
+
+
+	.wrapper-content{
+		background-color:#f5f5f5;
+	}
 
 	
-	.wrapper-content{
-		background-color:#ddd;
+	 
+	nav.navbar .navbar-nav.nav-sm				{	background-color:#5D5D5D;	}	
+
+	nav.navbar .navbar-nav.nav-sm>li>a 			{	color: #EEE; 				}
+	nav.navbar .navbar-nav.nav-sm>li>a:hover 	{	background-color: #34383B;	}
+
+	nav.navbar .navbar-nav.nav-lg>li>a:hover 	{	background-color: #ddd !important; color: #444 !important;	}
+	
+
+
+/* 	==========================================================================
+   	Stuffs
+   	========================================================================== */
+	.wrapper-page{
+		min-height: 600px;
+	}
+
+	.wrapper{
+		padding: 20px 0 30px;
+	}
+
+	/* Responsive >  Stuffs
+	-----------------------------------------------------*/
+	@media (max-width: 767px) {
+		.wrapper-page{
+			padding-left: 0px;
+		}	
+	}
+	@media (min-width: 768px) and (max-width: 991px){
+		.wrapper-page{
+			padding-left: 70px;
+		}
+	}
+	@media (min-width: 992px) and (max-width: 1199px){
+		.wrapper-page{
+			padding-left: 30px;
+		}
+	}
+	@media (min-width: 1200px) {
+		.wrapper-page{
+			padding-left: 0px;
+		}	
+	}	
+
+	.ellipsis {
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    display: -webkit-box;
+	    -webkit-box-orient: vertical;
+	    -webkit-line-clamp: 1;
+	    line-height: 14px;
+	    max-height: 15px; 
 	}
 	
-/* ==========================================================================
-   Stuffs
-   ========================================================================== */
+	/* Stuffs > Box
+	————————————————————————————————————————————————————————————————————————— */
+	.box {
+		margin: -15px 0;
+		padding: 15px;
+		background-color: #FFF;
+		border-top: 3px solid #e7eaec;
+		/* border-radius: 2px 2px 0 0; */
+	}
+	
+	.box-border {		
+		border-bottom: 1px solid rgba(0,0,0,.075);
+	}
+
+	.box-border:last-child {
+	    border: 0;
+	}
+
+	.box-heading{
+		padding:10px 0;
+	}
+
+	.box-heading>* ,
+	.box-content .content p {
+		margin: 0;
+		padding: 0;
+	}	
+	
+	.box-heading h2{
+		margin-left: 15px;
+	}
+
+	.box-content .wrapper-line{
+		margin: 15px 0;
+    	padding-bottom: 15px;
+	}
+	
+	.box-content .wrapper-line .icon-round{
+		height: 40px;
+		width: 40px;
+		border-radius: 55%;
+		text-align: center;
+		line-height: 3.2;
+	}
+
+	.box-content .wrapper-line .icon-round i.fa{
+		font-size: 21px;
+		color:#FFF;
+	}
+
+	.box-content p{
+		font-size: 12px;
+	}
+
+	.box-content p.title{
+		font-weight: bold;
+		font-size: 14px;
+	}
+	
+	.box-content .time p{
+		color:#c5c5c5;
+		font-size: 12px;
+		text-align: right;
+	}
 
 
 
 
-/* ==========================================================================
-   Navbar
-   ========================================================================== */
+/* 	==========================================================================
+   	Navbar
+   	========================================================================== */
+	.navbar-header button{
+		margin-top:15px;	
+		color:#444;
+		transition: all 0.4s ease-in-out 0.1s;
+	}
+	
 	.navbar-brand img{
-		height: 30px;
+		height: 40px;		
 	}
 	
 	nav.navbar{
+		height: 70px;
 		margin-bottom: 0;
+		box-shadow: 0px -20px 10px 20px #ABABAB;
+		border-radius: 0;
 	}
 
+	nav ul.navbar-nav.nav-sm{
+		margin: 1px -15px;
+	}
 
+	nav.navbar .navbar-nav.nav-lg>li>a {
+		padding: 25px 25px
+	}
 
-/* ==========================================================================
-   Navigation
-   ========================================================================== */
+	nav.navbar .navbar-nav.nav-sm>li>a:focus{
+		border-radius: 0;
+		border-left: 4px solid #F5B604;
+		padding-left: 11px;
+	}
+
+	/* Responsive >  navbar
+	-----------------------------------------------------*/
+	@media (max-width: 767px) {
+		.navbar-header{
+			height: 70px;
+		}	
+	}
+	
+	@media (min-width: 768px) {
+		nav #aside-navigation ul.nav-sm{
+			visibility: hidden;
+		}
+	}
+
+/* 	==========================================================================
+   	Aside - Navigation 
+   	========================================================================== */
+	
+	.navigation{
+		height: 100%;
+		position: fixed;
+	}
+
+	/* Responsive >  Aside - Navigation
+	-----------------------------------------------------*/
+	@media (min-width: 768px) and (max-width: 991px){
+		.navigation{
+			width: 250px;
+		}
+	}
+
+	@media (min-width: 992px) {
+		.navigation{
+			width: 320px;
+		}
+	}
+	
+	@media (min-width: 1200px) {
+		.navigation{
+			width: 330px;
+		}
+	}
+		
 	.navigation .info-profile{
 		padding: 30px 15px;
 	}
@@ -166,30 +370,34 @@
 		color: #ddd;
 	}
 	
+	.navigation ul.nav>li>a:focus,
 	.navigation ul.nav>li>a:hover{
 		background-color: #34383b;
 		border-radius: 0;
 		border-left: 4px solid #f5b604;
 		padding-left: 11px;
 	}
-	
+
 	.navigation .logout{
-		margin: 25px 0;
+		padding: 25px 0;
 	}
 
 	.navigation .logout a:hover{
 		color:#FFF;
 	}
 
-/* ==========================================================================
-   Login
-   ========================================================================== */
+
+/*	==========================================================================
+   	Login
+   	========================================================================== */
+	
 	.wrapper-login{
 		background: url('../img/bg-login.png') no-repeat center center / cover;
 		padding: 100px 0;
 		height: 100%;
 		width: 100%;
 		position: fixed;
+		top:0;
 	}
 
 	.login img.logo{
@@ -263,3 +471,13 @@
 		-webkit-box-shadow: none !important;
 		outline:none !important;
 	}
+
+
+
+/* 	==========================================================================
+	Internal > Home (Timeline)
+   	========================================================================== */
+
+	.wrapper-page.timeline{
+	    padding: 15px 0;
+	} 

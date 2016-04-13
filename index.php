@@ -1,9 +1,14 @@
 <?php 
+
+	header('Content-Type: text/html; charset=utf-8');
 	session_start();
 	ob_start();
 	error_reporting(0);
-	include 'conecta.php'; 
+
 	//Conecta no banco do sistema 
+	include 'conecta.php'; 
+	include 'lib/php/funcoes_html.php'; 
+	
 ?> 
 
 <!DOCTYPE html>
@@ -22,6 +27,9 @@
 
 		<!-- Custom styles -->
 		<link  rel="stylesheet" href="<?php echo $path;?>/lib/css/styles.css">
+		
+		<!-- Font Awesome-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 		<!-- Sweet Alert -->
 		<link rel="stylesheet" type="text/css" href="<?php echo $path;?>/lib/plugins/sweetalert-master/dist/sweetalert.css">
@@ -38,7 +46,10 @@
 				$matricula = stripslashes($_POST['matricula']);
 				$matricula = mysql_real_escape_string($_POST['matricula']);
 
-				$sql = "SELECT * FROM alunos WHERE matricula = '".$matricula."' AND senha = '".$senha."' ";
+				$sql = "SELECT a.*, c.nome as nome_curso 
+						FROM aluno a
+						INNER JOIN curso c ON c.id_curso = a.id_curso
+						WHERE a.matricula = '".$matricula."' AND a.senha = '".$senha."' ";
 				$sql = mysql_query($sql) or die(mysql_error());
 
 				$count_sql = mysql_num_rows($sql); //conta a quantidade de linhas do resultado da consulta
@@ -49,8 +60,10 @@
 				if ($count_sql == 1) {
 
 					$aluno = mysql_fetch_assoc($sql);
-					$_SESSION['aluno'] = $aluno['id_aluno'];
+					$_SESSION['aluno']      = $aluno['id_aluno'];
 					$_SESSION['nome_aluno'] = $aluno['nome'];
+					$_SESSION['curso']      = $aluno['id_curso'];
+					$_SESSION['nome_curso'] = $aluno['nome_curso'];
 					include 'main.php';
 				}
 
