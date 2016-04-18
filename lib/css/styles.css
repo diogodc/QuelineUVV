@@ -61,6 +61,232 @@
    Blocks
    ========================================================================== */
 
+	/* Blocks > Box
+	————————————————————————————————————————————————————————————————————————— */
+	.box {
+		padding: 15px;
+		margin-bottom: 20px ;
+		background-color: #FFF;
+		border-top: 3px solid #e7eaec;
+		/* border-radius: 2px 2px 0 0; */
+	}
+
+	@media (max-width: 991px) {
+		.box:first-child{
+			margin-top: 0;
+		}
+		.box{
+			margin: 15px 0 ;
+		}	
+	}	
+
+	
+	.box-border {		
+		border-bottom: 1px solid rgba(0,0,0,.075);
+	}
+
+	.box-border:last-child {
+	    border: 0;
+	}
+
+	.box-heading{
+		padding:10px 0;
+	}
+
+	.box-heading>* ,
+	.box-content .content p {
+		margin: 0;
+		padding: 0;
+	}	
+	
+	.box-heading h2{
+		margin-left: 15px;
+	}
+
+	.box-content .wrapper-line{
+		padding: 15px 15px;
+    	margin: 0 -15px;
+	}
+
+	.box-content .wrapper-line:hover{
+		background-color: rgba(0,0,0,0.02);
+		cursor:pointer;
+	}
+	
+	.box-content p{
+		font-size: 12px;
+	}
+
+	.box-content p.title{
+		font-weight: bold;
+		font-size: 14px;
+	}
+
+	.box-content .time p{
+		color:#c5c5c5;
+		font-size: 12px;
+		text-align: right;
+	}
+	
+
+	.box p.ellipsis-msg{
+		overflow: hidden;
+    	text-overflow: ellipsis;
+    	display: -webkit-box;
+	    -webkit-box-orient: vertical;
+	    -webkit-line-clamp: 3;
+	    line-height: 14px;
+	    max-height: 41px;
+	    margin: 3px 0 ;
+	}
+	
+	.box .content .time{
+		color: #888;
+	}
+
+	.box #tab-aulas li a {
+		padding: 10px 0;
+	}
+
+	.box .details{
+		margin-top: 5px;
+	}
+
+	.box p.show-details{
+		display: none;
+		text-transform: uppercase;
+		color:#999;
+		text-align: right;
+	}
+	
+
+	.box #content-aulas .wrapper-line:hover p.show-details{
+		display: block !important;
+	}
+
+
+
+	/* Blocks > Box > Elements
+	————————————————————————————————————————————————————————————————————————— */
+	
+	/* Elements > Icons
+	------------------------------------------*/
+	.box-content .wrapper-line .icon-round{
+		height: 40px;
+		width: 40px;
+		border-radius: 55%;
+		text-align: center;
+		line-height: 3.2;
+		margin:0 auto;
+	}
+
+	.box-content .wrapper-line .icon-round i.fa{
+		font-size: 21px;
+		color:#FFF;
+	}
+
+
+	/* Elements > Tabs
+	------------------------------------------*/
+	.box .nav-tabs a{
+		color:#888;
+	}
+	
+	.box .nav-tabs a:hover,
+	.box .nav-tabs a:focus{
+		color:#444;
+	}
+
+	.box .nav-tabs.nav-justified>li>a,
+	.box .nav-tabs.nav-justified>a, 
+	.box .nav-tabs.nav-justified>a:focus, 
+	.box .nav-tabs.nav-justified>a:hover,
+	.box .nav-tabs.nav-justified>.active>a, 
+	.box .nav-tabs.nav-justified>.active>a:focus, 
+	.box .nav-tabs.nav-justified>.active>a:hover{
+		border: none;
+		border-radius: 0;
+		background-color:transparent;
+	}
+
+	.box .nav-tabs.nav-justified>.active>a, 
+	.box .nav-tabs.nav-justified>.active>a:focus, 
+	.box .nav-tabs.nav-justified>.active>a:hover{
+		border-bottom: 2px solid #f5b604;	
+	}
+
+
+	/* Elements > Images
+	------------------------------------------*/
+	.box img.img-monitor{
+		height:45px;
+		padding:7px;
+		background-color: #eee;
+	}
+
+
+	/* Elements > Buttons
+	------------------------------------------*/
+	.box .btn-group{
+		margin-top: 21px;
+	}
+
+	.box .btn-group .btn{
+		font-size: 11px;
+		padding: 5px;
+		text-align: center;
+		width: 50%;
+	}
+
+	.box #content-solicitacoes .btn-group button{
+		background-color: transparent;
+	}
+
+	
+	.box #content-solicitacoes .btn-group button.approve{
+		border: 1px solid #1fc1d8;
+		color:#1fc1d8;
+	}
+
+	.box #content-solicitacoes .btn-group button.approve:hover{
+		color:#fff;
+		background-color:#1fc1d8;
+	}
+
+	.box #content-solicitacoes .btn-group button.reject{
+		border: 1px solid #ed7163;
+		color:#ed7163;
+	}
+	
+	.box #content-solicitacoes .btn-group button.reject:hover{
+		color:#fff;
+		background-color: #ed7163; 
+	}
+
+	.box #content-monitores img.img-monitor{
+		height: 90px;
+	    margin: 25px 0;
+	    padding: 7px;
+	}
+
+	.box #content-monitores .mnt-profile{
+	    padding: 10px;
+	    border: 1px solid rgba(0,0,0,0.05);
+	    margin-top: 15px;
+	}
+	
+	.box #content-monitores .mnt-profile .btn-dark{
+		color: #444;
+		font-size: 12px;
+		border: 1px solid #666;
+		border-radius: 0;
+		margin: 10px 0;
+	}
+	
+	.box #content-monitores .mnt-profile .btn-dark:hover{
+		color: #fff;
+		background-color:#666;
+	}
 
 
 
@@ -202,73 +428,7 @@
 	    max-height: 15px; 
 	}
 	
-	/* Stuffs > Box
-	————————————————————————————————————————————————————————————————————————— */
-	.box {
-		margin: -15px 0;
-		padding: 15px;
-		background-color: #FFF;
-		border-top: 3px solid #e7eaec;
-		/* border-radius: 2px 2px 0 0; */
-	}
 	
-	.box-border {		
-		border-bottom: 1px solid rgba(0,0,0,.075);
-	}
-
-	.box-border:last-child {
-	    border: 0;
-	}
-
-	.box-heading{
-		padding:10px 0;
-	}
-
-	.box-heading>* ,
-	.box-content .content p {
-		margin: 0;
-		padding: 0;
-	}	
-	
-	.box-heading h2{
-		margin-left: 15px;
-	}
-
-	.box-content .wrapper-line{
-		margin: 15px 0;
-    	padding-bottom: 15px;
-	}
-	
-	.box-content .wrapper-line .icon-round{
-		height: 40px;
-		width: 40px;
-		border-radius: 55%;
-		text-align: center;
-		line-height: 3.2;
-	}
-
-	.box-content .wrapper-line .icon-round i.fa{
-		font-size: 21px;
-		color:#FFF;
-	}
-
-	.box-content p{
-		font-size: 12px;
-	}
-
-	.box-content p.title{
-		font-weight: bold;
-		font-size: 14px;
-	}
-	
-	.box-content .time p{
-		color:#c5c5c5;
-		font-size: 12px;
-		text-align: right;
-	}
-
-
-
 
 /* 	==========================================================================
    	Navbar
@@ -318,6 +478,8 @@
 		}
 	}
 
+
+
 /* 	==========================================================================
    	Aside - Navigation 
    	========================================================================== */
@@ -329,21 +491,15 @@
 
 	/* Responsive >  Aside - Navigation
 	-----------------------------------------------------*/
-	@media (min-width: 768px) and (max-width: 991px){
+	@media (max-width: 991px){
 		.navigation{
-			width: 250px;
+			width:25%;
 		}
 	}
 
 	@media (min-width: 992px) {
 		.navigation{
-			width: 320px;
-		}
-	}
-	
-	@media (min-width: 1200px) {
-		.navigation{
-			width: 330px;
+			width: 16.66666667%;
 		}
 	}
 		
@@ -385,6 +541,7 @@
 	.navigation .logout a:hover{
 		color:#FFF;
 	}
+
 
 
 /*	==========================================================================

@@ -69,4 +69,57 @@ function box_notificacao($n, $t, $s, $d){ //Tipo de notificação, Título, Subt
 	return $html;
 }
 
+function box_aulas($t, $m, $d){ // Título, Mensagem, Datetime
+	$html ='<div class="wrapper-line box-border">
+				<div class="row">
+					<div class="col-sm-2 text-right">
+						<img class="img-monitor img-circle" src="lib/img/profile.gif" alt="Foto monitor">		
+					</div>
+					<div class="col-sm-10 content">
+						<div class="">
+							<p class="title">'.$t.'</p>
+							<p class="ellipsis-msg">'.$m.'</p>
+						</div>
+						<div class="details">
+							<div class="row">
+								<div class="col-sm-6">
+									<p class="time">
+										'.$d.'
+									</p>
+								</div>
+								<div class="col-sm-6">
+									<a href="#">
+										<p class="show-details">Ver detalhes</p>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>';
+
+	return $html;
+}
+
+function box_solicitacoes($n, $m, $d){ //Nome, Matéria, Datetime
+	$html ='<div class="wrapper-line box-border">
+				<div class="row">
+					<div class="col-sm-6 content">
+						<p class="title">'.$n.'</p>
+						<p class="ellipsis-msg">'.$m.', '.$d.'</p>
+						
+					</div>
+					
+					<div class="col-sm-6">
+						<div class="btn-group center-block" role="group" aria-label="...">
+							<button type="button" class="btn approve">Aprovar</button>
+							<button type="button" class="btn reject">Recusar</button>
+						</div>
+					</div>
+				</div>		
+			</div>';
+
+	return $html;
+}
+
 ?>
