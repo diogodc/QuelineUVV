@@ -20,12 +20,25 @@
 
 	}
 
-	// Create connection
-	// $conn = new mysqli($servername, $username, $password);
+	// $conn = mysqli_connect($hostname, $username, $password, $database);
+
+	// // Check connection
+	// if (mysqli_connect_errno())
+	// {
+	// 	echo "Failed to connect to MySQL: " . mysqli_connect_error();
+	// }
 
 	$conn = mysql_connect($hostname, $username, $password) or die("Unable to connect to MySQL");
-	// echo "Connected to MySQL<br>";
+
+	mysql_set_charset('utf8', $conn);
 
 	$selected = mysql_select_db($database,$conn) or die("Could not select hermes".mysql_error());
-	// echo "hermes Selected";
+	
+	mysql_query("SET NAMES 'utf8'");
+	mysql_query('SET character_set_connection=utf8');
+	mysql_query('SET character_set_client=utf8');
+	mysql_query('SET character_set_results=utf8');
+
+
+
 ?>

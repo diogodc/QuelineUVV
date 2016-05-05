@@ -1,4 +1,22 @@
 <?php 
+
+	$solicitacoes = array();
+	$sql = "SELECT 
+				s.*, 
+				a.nome as nome_aluno,
+				m.nome as nome_materia
+			FROM solicitacao s
+			INNER JOIN aluno a ON s.id_aluno = a.id_aluno
+			INNER JOIN materia m ON s.id_materia = m.id_materia
+			WHERE a.id_aluno = '".$_SESSION['aluno']."'";
+	$sql = mysql_query($sql) or die(mysql_error());
+
+	while ($linha = mysql_fetch_assoc($sql)) {
+		$solicitacoes[] = $linha;
+	}
+
+	#----------------------------------------------------------------------------------------------------#
+
 	//Navbar
 	include 'includes/navbar.php';
  ?>
@@ -24,6 +42,7 @@
 								</div>
 								<div class="box-content">
 									<?php 
+
 										//Tipo de notificação: Mensagem
 										echo box_notificacao(
 											'mensagem', 
@@ -44,35 +63,6 @@
 											'Aula desmarcada', 
 											'Lorem ipsum dolor sit amet', 
 											'12 de abril');
-
-										//Tipo de notificação: Monitor adiou aula
-										echo box_notificacao(
-											'aula_adiada', 
-											'Aula adiada', 
-											'Morbi finibus quam nec ex dignissim pulvinar.', 
-											'12 abril');
-
-										//Tipo de notificação: Aprovar aula
-										echo box_notificacao(
-											'aula_aprovada', 
-											'Solicitação de aula aprovada!', 
-											'Duis in nisi sit amet orci egestas gravida at quis tortor.', 
-											'12 abril');
-
-										//Tipo de notificação: Recusar aula
-										echo box_notificacao(
-											'aula_recusada', 
-											'Solicitação de aula recusada.', 
-											'Aliquam mauris tellus, hendrerit pharetra pretium et', 
-											'12 abril');
-
-										//Tipo de notificação: solicitação aula
-										// * * Somente para monitores * *
-										echo box_notificacao(
-											'solicitacao', 
-											'Nova solicitação', 
-											'Aliquam mauris tellus, hendrerit pharetra pretium et', 
-											'14/03/2015');
 									 ?>
 								</div>								
 							</div>
@@ -174,6 +164,17 @@
 													</div>
 												</div>
 											</div>
+											<div class="col-sm-4 col-md-6">
+												<div class="text-center mnt-profile">
+													<img class="img-monitor img-circle" src="lib/img/profile.gif" alt="Foto monitor">
+													
+													<div class="">
+														<p class="title">Joana</p>
+														<p class="ellipsis-msg">Monitoria de Computação Gráfica</p>
+														<a href="" class="btn btn-dark">Ver detalhes</a>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div> 
 								</div>
@@ -190,20 +191,20 @@
 								<div class="box-content">
 									<div id="content-solicitacoes">
 										<?php 
+
+											foreach ($solicitacoes as $linha) {
+												echo box_solicitacoes($linha['nome_aluno'], $linha['nome_materia']);
+											}
+
 											echo box_solicitacoes(
-												'Maria', 
-												'Lógica para Computação', 
-												'Segunda-feira às 14 horas');
-											
+												'João da Silva', 
+												'Cálculo 1');
 											echo box_solicitacoes(
-												'Maria', 
-												'Cálculo 1', 
-												'Segunda-feira às 11 horas');
-											
+												'Maria Joaquina', 
+												'Estrutura de Dados');
 											echo box_solicitacoes(
-												'Maria', 
-												'Programação 2', 
-												'Segunda-feira às 21 horas');
+												'José Maromba', 
+												'Peteca 4');
 
 										 ?>
 									</div>

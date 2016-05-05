@@ -13,22 +13,22 @@
 		<div class="collapse navbar-collapse" id="aside-navigation">
 			<ul class="nav navbar-nav nav-sm">
 				<li>
-					<a href="#">Home</a>
+					<a href="?secao=home">Home</a>
 				</li>
 				<li>
-					<a href="#">Perfil</a>
+					<a href="?secao=perfil">Perfil</a>
 				</li>
 				<li>
-					<a href="#">Monitores</a>
+					<a href="?secao=monitores">Monitores</a>
 				</li>
 				<li>
-					<a href="#">Solicitações</a>
+					<a href="?secao=solicitacoes">Solicitações</a>
 				</li>
 			</ul>
-			<div class="navbar-right hidden-sm">
+			<div class="navbar-right hidden-xs">
 				<ul class="nav navbar-nav nav-lg">
 		        	<li class="active">
-		        		<a href="logout.php" id="logout">Sair <span class="sr-only">(current)</span></a>
+		        		<a href="logout.php" id="logout">Sair <span class="sr-only"></span></a>
 		        	</li>
 		        </ul>
 			</div>

@@ -61,6 +61,44 @@
    Blocks
    ========================================================================== */
 
+	/* Blocks > Wrappers
+	————————————————————————————————————————————————————————————————————————— */	
+	.wrapper-page{
+		min-height: 600px;
+	}
+
+	.wrapper{
+		padding: 20px 0 30px;
+	}
+	
+	.content .wrapper{
+		padding:11px 0;
+	}
+
+	/* Responsive >  Stuffs
+	-----------------------------------------------------*/
+	@media (max-width: 767px) {
+		.wrapper-page{
+			padding-left: 0px;
+		}	
+	}
+	@media (min-width: 768px) and (max-width: 991px){
+		.wrapper-page{
+			padding-left: 70px;
+		}
+	}
+	@media (min-width: 992px) and (max-width: 1199px){
+		.wrapper-page{
+			padding-left: 30px;
+		}
+	}
+	@media (min-width: 1200px) {
+		.wrapper-page{
+			padding-left: 0px;
+		}	
+	}	
+
+
 	/* Blocks > Box
 	————————————————————————————————————————————————————————————————————————— */
 	.box {
@@ -164,14 +202,26 @@
 		display: block !important;
 	}
 
-
+	/* Responsive >  Box
+	-----------------------------------------------------*/
+	@media (max-width: 767px) {
+		.box-content .icon-round{
+			margin: 12px 0 !important;
+		}
+	}
 
 	/* Blocks > Box > Elements
 	————————————————————————————————————————————————————————————————————————— */
 	
-	/* Elements > Icons
+	/* Elements > Icons without border
 	------------------------------------------*/
-	.box-content .wrapper-line .icon-round{
+	.box-content .icon-round-sm i.fa,
+	.box-content .icon-round i.fa{
+		color: #FFFFFF;
+	}
+
+	/* normal size */
+	.box-content .icon-round{
 		height: 40px;
 		width: 40px;
 		border-radius: 55%;
@@ -180,9 +230,50 @@
 		margin:0 auto;
 	}
 
-	.box-content .wrapper-line .icon-round i.fa{
+	.box-content .icon-round i.fa{
 		font-size: 21px;
-		color:#FFF;
+	}
+
+	/* small size */
+	.box-content .icon-round-sm{
+		height: 30px;
+	    width: 30px;
+	    border-radius: 55%;
+	    text-align: center;
+	    line-height: 2.2;
+	    margin: 0 auto;
+	}
+	
+	.box-content .icon-round-sm i.fa{
+		font-size: 18px;
+	}
+
+	/* Elements > Icons with border
+	------------------------------------------*/
+	.box-content .icon-round-sm.icon-round-o,
+	.box-content .icon-round.icon-round-o{
+		border-width: 2px;
+		border-style: solid;
+		transition: 0.4s background-color ease-out;	
+	}
+
+	.box-content .icon-round-sm.icon-round-o:hover,
+	.box-content .icon-round.icon-round-o:hover{
+		cursor:pointer;
+		border:none;
+		padding-top:2px; /* fix the icon positioning */
+		background-color:#444;
+		transition: 0.4s background-color ease-out;
+	}
+
+	.box-content .icon-round-sm.icon-round-o:hover i.fa,
+	.box-content .icon-round.icon-round-o:hover i.fa{
+		color:#F1F1F1;
+	}
+	
+	.box-content .icon-round-sm.icon-round-o i.fa,
+	.box-content .icon-round.icon-round-o i.fa{
+		color: #444;
 	}
 
 
@@ -219,21 +310,34 @@
 	/* Elements > Images
 	------------------------------------------*/
 	.box img.img-monitor{
-		height:45px;
+		height:70px;
 		padding:7px;
+		margin:5px 15px;
 		background-color: #eee;
+	}
+
+	@media (max-width: 767px) {
+		.box img.img-monitor{
+			text-align: left;
+		}
+	}
+
+	@media (min-width: 768px){
+		.box img.img-monitor{
+			text-align: right;
+		}
 	}
 
 
 	/* Elements > Buttons
 	------------------------------------------*/
 	.box .btn-group{
-		margin-top: 21px;
+		margin-top:6px;
 	}
 
 	.box .btn-group .btn{
 		font-size: 11px;
-		padding: 5px;
+		padding: 6px 30px;
 		text-align: center;
 		width: 50%;
 	}
@@ -279,8 +383,9 @@
 		color: #444;
 		font-size: 12px;
 		border: 1px solid #666;
-		border-radius: 0;
+		border-radius: 4px;
 		margin: 10px 0;
+		padding: 6px 25px;
 	}
 	
 	.box #content-monitores .mnt-profile .btn-dark:hover{
@@ -294,7 +399,9 @@
    Typography
    ========================================================================== */
 
-	body{
+	body,
+	.box.contact .main-information h2,  /* .main-information usado em box da pg perfil */ 
+	.box.contact .main-information h3{
 		font-family: "Open Sans", Helvetica;
 	}
 
@@ -310,7 +417,13 @@
 
 	h2 { font-size: 20px; }
 
+	.box.contact .main-information h3{
+		font-size: 18px;
+	}
 
+	.box.contact p{
+		font-size:14px;
+	}
 
 /* ==========================================================================
    Colors
@@ -387,37 +500,6 @@
 /* 	==========================================================================
    	Stuffs
    	========================================================================== */
-	.wrapper-page{
-		min-height: 600px;
-	}
-
-	.wrapper{
-		padding: 20px 0 30px;
-	}
-
-	/* Responsive >  Stuffs
-	-----------------------------------------------------*/
-	@media (max-width: 767px) {
-		.wrapper-page{
-			padding-left: 0px;
-		}	
-	}
-	@media (min-width: 768px) and (max-width: 991px){
-		.wrapper-page{
-			padding-left: 70px;
-		}
-	}
-	@media (min-width: 992px) and (max-width: 1199px){
-		.wrapper-page{
-			padding-left: 30px;
-		}
-	}
-	@media (min-width: 1200px) {
-		.wrapper-page{
-			padding-left: 0px;
-		}	
-	}	
-
 	.ellipsis {
 	    overflow: hidden;
 	    text-overflow: ellipsis;
@@ -635,6 +717,36 @@
 	Internal > Home (Timeline)
    	========================================================================== */
 
-	.wrapper-page.timeline{
+	.wrapper-page{
 	    padding: 15px 0;
 	} 
+
+
+
+
+/* 	==========================================================================
+	Internal > Perfil 
+   	========================================================================== */
+	
+	.box.contact .main-information{
+		margin: 25px 0;
+	}
+
+	.box.contact .main-information h3{
+		margin-top:0;
+	}
+
+	.box.contact .fa{
+		font-size:18px;
+		color: #C1C1C1;
+	}
+
+	.box.contact .fa.fa-mobile{
+		font-size: 28px;
+	    line-height: 20px;
+	}
+
+	.box.contact .social{
+		margin: 15px 0;
+	}
+

@@ -8,6 +8,15 @@
 	//Conecta no banco do sistema 
 	include 'conecta.php'; 
 	include 'lib/php/funcoes_html.php'; 
+
+	$sql = "SELECT a.*, c.nome as nome_curso 
+			FROM aluno a
+			INNER JOIN curso c ON c.id_curso = a.id_curso
+			WHERE a.id_aluno = '".$_SESSION['aluno']."'";
+	$sql = mysql_query($sql) or die(mysql_error());
+	$aluno = mysql_fetch_assoc($sql);
+	$nome_aluno = $aluno['nome'];
+	$nome_curso = $aluno['nome_curso'];
 	
 ?> 
 
@@ -78,6 +87,25 @@
 					include 'login.php';
 				}
 				else{
+					if (isset($_GET['secao'])) {
+						switch ($_GET['secao']) {
+							case 'perfil':
+								include 'perfil.php';
+								break;
+
+							case 'monitores':
+								include 'monitores.php';
+								break;
+							
+							case 'solicitacoes':
+								include 'solicitacoes.php';
+								break;
+							
+							default:
+								include 'main.php';
+								break;
+						}
+					}
 					include 'main.php';
 				}
 			}
