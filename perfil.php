@@ -18,7 +18,7 @@
 				<section class="wrapper-page perfil light-container">
 					<div class="row">	
 						<?php //Contato ?>
-						<article class="col-md-12 col-lg-6">
+						<div class="col-md-12 col-lg-6">
 							<div class="box contact">
 								<div class="row box-heading box-border">
 									<h2>Contato</h2>
@@ -31,97 +31,66 @@
 									
 									<div class="contact-wrapper">
 										<div class="row">
-											<div class="col-xs-12 col-sm-6 col-lg-12">
-												<?php //Email ?>
-												<div class="row">
-													<div class="col-xs-1 col-sm-2 col-lg-1">
-														<i class="fa fa-envelope"></i>
-													</div>
-													<div class="col-xs-11 col-sm-10 col-lg-11">
-														<p>fulaninho_com_cam@email.com</p>
-													</div>
+											<?php //Email ?>
+											<div class="col-sm-12 col-md-6">
+												<div style="display: -webkit-inline-box;">
+													<i class="fa fa-envelope"></i>
+													<p>fulaninho_com_cam@email.com</p>
 												</div>
 											</div>
-											<div class="col-xs-12 col-sm-6 col-lg-12">
-												<div class="row">
-													<div class="col-xs-1 col-sm-2 col-lg-1">
-														<i class="fa fa-envelope-o"></i>
-													</div>
-													<div class="col-xs-11 col-sm-10 col-lg-11">
-														<p>fulaninho_profissional@email.com</p>
-													</div>
+									
+											<div class="col-sm-12 col-md-6">
+												<div style="display: -webkit-inline-box;">
+													<i class="fa fa-envelope-o"></i>
+													<p>fulaninho_profissional@email.com</p>
 												</div>
 											</div>
-											
-											<?php  //Tentar mudar as linhas para esse código depois : 
-											
-												/*<div class="col-xs-12 col-sm-6 col-lg-12">
-													<div class="row">
-														<?php //Email ?>
-														<div class="col-sm-12 col-lg-6">
-															<div style="display: -webkit-inline-box;">
-																<i class="fa fa-envelope"></i>
-																<p>fulaninho_com_cam@email.com</p>
-															</div>
-														</div>
-												
-														<div class="col-sm-12 col-lg-6">
-															<div style="display: -webkit-inline-box;">
-																<i class="fa fa-envelope-o"></i>
-																<p>fulaninho_profissional@email.com</p>
-															</div>
-														</div>
-													</div>
-												</div> */
-											 ?>
-
-											<div class="col-xs-12 col-sm-6 col-lg-12">
-												<?php //Celular ?>
-												<div class="row">
-													<div class="col-xs-1 col-sm-2 col-lg-1">
-														<i class="fa fa-mobile"></i>
-													</div>
-													<div class="col-xs-11 col-sm-10 col-lg-11">
-														<p>27 9-9999-9999</p>
-													</div>
+											<?php //Phone ?>
+											<div class="col-sm-12 col-md-6">
+												<div style="display: -webkit-inline-box;">
+													<i class="fa fa-mobile"></i>
+													<p>27 9-9999-9999</p>
 												</div>
 											</div>
-											<div class="col-xs-12 col-sm-6 col-lg-12">
-												<?php //Celular ?>
-												<div class="row">
-													<div class="col-xs-1 col-sm-2 col-lg-1">
-														<i class="fa fa-phone"></i>
-													</div>
-													<div class="col-xs-11 col-sm-10 col-lg-11">
-														<p>27 3333-0000</p>
-													</div>
+									
+											<div class="col-sm-12 col-md-6">
+												<div style="display: -webkit-inline-box;">
+													<i class="fa fa-phone"></i>
+													<p>27 3333-0000</p>
 												</div>
 											</div>
 										</div>
-										
-										<div class="social">
-											<?php //Outras formas de contato ?>
-											<div class="row">
-												<?php //Facebook ?>
-												<div class="col-xs-1">
-													<div class="icon-round icon-round-sm icon-round-o">
-														<a href="https://www.facebook.com/ana.fail"><i class="fa fa-facebook"></i></a>
-													</div>
+									</div>
+									
+									<div class="social">
+										<?php //Outras formas de contato ?>
+										<div class="row">
+											<?php //Facebook ?>
+											<div class="icon-social">
+												<div class="icon-round icon-round-sm icon-round-o">
+													<a href="https://www.facebook.com/ana.fail"><i class="fa fa-facebook"></i></a>
 												</div>
-												<?php //Twitter ?>
-												<div class="col-xs-1">
-													<div class="icon-round icon-round-sm icon-round-o">
-														<a href="https://twitter.com/xuxameneghel_"><i class="fa fa-twitter"></i></a>
-													</div>
-												</div>
-
-												<?php //Ver outra rede social interessante de colocar aqui. será opcional adicionar isso nas configuracoes ?>
 											</div>
+											<?php //Twitter ?>
+											<div class="icon-social">
+												<div class="icon-round icon-round-sm icon-round-o">
+													<a href="https://twitter.com/xuxameneghel_"><i class="fa fa-twitter"></i></a>
+												</div>
+											</div>
+											<?php //Linkedin ?>
+											<div class="icon-social">
+												<div class="icon-round icon-round-sm icon-round-o">
+													<a href="#"><i class="fa fa-linkedin"></i></a>
+												</div>
+											</div>
+
+											<?php //Ver outra rede social interessante de colocar aqui. será opcional adicionar isso nas configuracoes ?>
 										</div>
-									</div>									
+									</div>
+																	
 								</div>								
 							</div>
-						</article>
+						</div>
 						<!-- end /.box -->
 
 						<div class="col-md-12 col-lg-6">

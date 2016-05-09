@@ -309,10 +309,11 @@
 
 	/* Elements > Images
 	------------------------------------------*/
-	.box img.img-monitor{
+	.box img.img-monitor,
+	img.img-monitor{
 		height:70px;
 		padding:7px;
-		margin:5px 15px;
+		
 		background-color: #eee;
 	}
 
@@ -379,7 +380,7 @@
 	    margin-top: 15px;
 	}
 	
-	.box #content-monitores .mnt-profile .btn-dark{
+	.btn-dark{
 		color: #444;
 		font-size: 12px;
 		border: 1px solid #666;
@@ -388,7 +389,7 @@
 		padding: 6px 25px;
 	}
 	
-	.box #content-monitores .mnt-profile .btn-dark:hover{
+	.btn-dark:hover{
 		color: #fff;
 		background-color:#666;
 	}
@@ -401,7 +402,8 @@
 
 	body,
 	.box.contact .main-information h2,  /* .main-information usado em box da pg perfil */ 
-	.box.contact .main-information h3{
+	.box.contact .main-information h3,
+	.monitores h4.materia{
 		font-family: "Open Sans", Helvetica;
 	}
 
@@ -414,16 +416,16 @@
 		font-family: "Bitter", Helvetica;
 	}
 	
+	h2 			{ font-size: 20px; }
+	h3 small 	{ font-size: 81%;  }
+	
 
-	h2 { font-size: 20px; }
+	h3.main-info 						{ font-size: 18px; }
+	h4.materia 							{ font-size: 14px; }
 
-	.box.contact .main-information h3{
-		font-size: 18px;
-	}
+	.box.contact p 						{ font-size: 14px; }
+	.box.contact .main-information h3 	{ font-size: 18px; }
 
-	.box.contact p{
-		font-size:14px;
-	}
 
 /* ==========================================================================
    Colors
@@ -721,6 +723,9 @@
 	    padding: 15px 0;
 	} 
 
+	.wrapper-page.timeline .box img.img-monitor{
+		margin: 5px 0px !important;
+	}
 
 
 
@@ -736,6 +741,14 @@
 		margin-top:0;
 	}
 
+
+	/* 	Perfil > icons 
+		---------------------------------------------------------------*/
+	.box.contact .contact-wrapper i 			{ margin-right: 15px; }
+
+	.box.contact .contact-wrapper i.fa-mobile 	{ padding-right: 5px; }
+	.box.contact .contact-wrapper i.fa-phone 	{ padding-right: 4px; }
+	
 	.box.contact .fa{
 		font-size:18px;
 		color: #C1C1C1;
@@ -749,4 +762,39 @@
 	.box.contact .social{
 		margin: 15px 0;
 	}
+	
+	.box.contact .social .icon-social:first-child{
+		margin-left: 15px;
+	}
 
+	.box.contact .social .icon-social{
+		margin-right: 15px ;
+		display: inline-block;
+	}
+
+
+
+
+/* 	==========================================================================
+	Internal > Monitores 
+   	========================================================================== */
+	.monitores img.img-monitor{
+		margin: 6px 0 ;
+	}
+
+	.monitores h3 small{
+		color: #444;
+	}
+
+	.monitores h4, 
+	.monitores h3{
+		margin: 5px 0;
+	}
+
+	/* Responsive >  Internal > Monitores
+	-----------------------------------------------------*/
+	@media (min-width: 992px){
+		.monitores a.btn{
+			float: right;
+		}
+	}

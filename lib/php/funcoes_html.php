@@ -53,14 +53,14 @@ function box_notificacao($n, $t, $s, $d){ //Tipo de notificação, Título, Subt
 
 	$html ='<div class="wrapper-line box-border">
 				<div class="row">
-					<div class="col-sm-2">
+					<div class="col-xs-2 col-sm-2">
 						'.ico_notificacao($n).'			
 					</div>
-					<div class="col-sm-7 content">
+					<div class="col-xs-7 col-sm-7 content">
 						<p class="title">'.$t.'</p>
 						<p class="ellipsis">'.$s.'</p>
 					</div>
-					<div class="col-sm-3 time">
+					<div class="col-xs-3 col-sm-3 time">
 						<p>'.$d.'</p>
 					</div>
 				</div>		
