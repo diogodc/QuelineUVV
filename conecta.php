@@ -21,8 +21,6 @@
 	}
 
 	// Create connection
-	// $conn = new mysqli($servername, $username, $password);
-
 	$conn = mysql_connect($hostname, $username, $password) or die("Unable to connect to MySQL");
 	// echo "Connected to MySQL<br>";
 
